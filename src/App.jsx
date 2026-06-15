@@ -21,7 +21,7 @@ function App() {
     <div className={`min-h-screen ${theme === "light" ? "bg-white text-black" : "bg-gray-900 text-white"}`}>
       <button
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="m-4 px-2 py-2 bg-cyan-400 text-white rounded-2xl"
+        className="m-4 px-2 py-2 bg-[#217D77] text-white rounded"
       >
         Switch to {theme === "light" ? "Dark" : "Light"} Mode
       </button>
