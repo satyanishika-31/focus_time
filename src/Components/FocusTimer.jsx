@@ -33,7 +33,7 @@ function FocusTimer() {
     <div className="mx-auto w-full max-w-3xl">
       <div className="mx-auto my-6 px-2 text-center sm:my-10 sm:px-6">
         <h1 className="text-2xl font-bold sm:text-3xl">Focus Timer</h1>
-        <p className="mx-auto my-4 w-full max-w-md rounded p-4 text-4xl font-semibold shadow-2xl sm:text-5xl">
+        <p className="mx-auto my-4 w-full max-w-md rounded p-4 text-4xl  shadow-2xl sm:text-5xl">
           {formatTime(time)}
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
