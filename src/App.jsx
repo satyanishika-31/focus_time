@@ -1,16 +1,10 @@
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 import FocusTimer from "./Components/FocusTimer";
 
-import React from 'react'
-
 function App() {
-  
- const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) setTheme(saved);
-  }, []);
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "light",
+  );
 
   useEffect(() => {
     document.documentElement.className = theme;
@@ -18,10 +12,14 @@ function App() {
   }, [theme]);
 
   return (
-    <div className={`min-h-screen ${theme === "light" ? "bg-white text-black" : "bg-gray-900 text-white"}`}>
+    <div
+      className={`min-h-screen px-4 py-4 sm:px-6 ${
+        theme === "light" ? "bg-white text-black" : "bg-gray-900 text-white"
+      }`}
+    >
       <button
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="m-4 px-2 py-2 bg-[#217D77] text-white rounded"
+        className="mb-6 w-full rounded bg-[#217D77] px-4 py-2 text-sm font-medium text-white sm:w-auto"
       >
         Switch to {theme === "light" ? "Dark" : "Light"} Mode
       </button>
@@ -31,5 +29,4 @@ function App() {
 
 }
 
-export default App
-  
+export default App;
